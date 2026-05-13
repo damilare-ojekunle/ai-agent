@@ -15,6 +15,7 @@ class AnswerOutput(BaseModel):
     question:str = Field(description="The orginal question")
     reasoning:str =Field(description="Step by step thinking")
     result:str = Field(description="Final concise answer")
+    code_example: str = ""
 
 
 
@@ -30,7 +31,8 @@ Format:
 {{
   "question": "the original question",
   "reasoning": "your step by step thinking",
-  "result": "your final concise answer"
+  "result": "your final concise answer",
+  "code_example": "any code example here, or empty string if no code needed"
 }}"""),
     ("user", "{question}")
 ])
